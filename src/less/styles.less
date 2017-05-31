@@ -15,6 +15,25 @@
 body {
 	background-image: url(../images/bg.png);
 
+	.p1 {
+		margin: 0 0;
+		font-family: Lato;
+		font-size: 50px;
+		letter-spacing: 2.6px;
+		text-align: center;
+		color: #ffffff;
+		text-shadow: 0px 0.5px 0.5px rgba(0, 0, 0, 0.15);
+	}
+	.p3	{
+		font-family: Lato;
+		font-size: 30px;
+		font-weight: 300;
+		letter-spacing: 1.6px;
+		text-align: center;
+		color: #ffffff;
+		text-shadow: 0px 0.5px 0.5px rgba(0, 0, 0, 0.15);
+	}
+
 	header {
 		background-color: #ffffff;
 		max-width: 1920px;
@@ -22,7 +41,7 @@ body {
 		.header-text {
 			margin-top: 35px;
 			float: right;
-			width: 550px;
+			
 			height: 22px;
 			font-family: Lato-i;
 			font-size: 22px;
@@ -43,11 +62,13 @@ body {
 	.wave-top {
 		position: absolute;
 		top: 0;
+		z-index: 10;
 	}
 
 	.wave-bot {
 		position: absolute;
 		bottom: 0;
+		z-index: 10;
 	}
 
 	.col-logo {
@@ -60,15 +81,58 @@ body {
 		width: 100%;
 		height: 686px;
 
+		.item{
+		    height: 686px;
+		}
+
 		.content-1-bg {
 			position: absolute;
 			z-index: -1;
 			top: 0;
+			height: 686px;
 			left: calc(~"(100% - 1920px)/2");
 		}
 
-		.text1-1 {
-			
+		.text-1-1 {
+			position: absolute;
+			z-index: 1;
+			top: 213px;
+			padding: 0;
+
+			.line {
+				width: 248px;
+				float: none;
+				padding: 7px;
+		    	margin: 0 auto;
+			}
+		}
+
+		.center-text {
+			padding-top: 5px;
+			max-width: 1145px;
+		    float: none;
+		    margin: 0 auto;
+		}
+
+		.btn-circle {
+			width: 37px;
+			height: 37px;
+			text-align: center;
+			padding: 6px 0;
+			font-size: 12px;
+			line-height: 1.428571429;
+			border-radius: 20px;
+			border: 0px;
+			background-color: rgba(255, 255, 255, 0.25);
+			color: #efc22d
+		}
+
+		.btn-l {
+			float: right;
+		}
+
+		.btn-r {
+			float: left;
 		}
 	}
 
