@@ -7,13 +7,16 @@ $(".btn-right").click(function() {
 });
 
 $(".btn-beer").click(function() {
-    document.getElementById("shadow").style.visibility = "visible";
+    $("#shadow")
+        .css("display", "flex")
+        .hide()
+        .fadeIn();
 });
 
 $(document).ready(function() {
     var div = document.getElementById("shadow");
     div.onclick = function (e) {
-        div.style.visibility = "hidden";
+        $("#shadow").fadeOut();
     }
 });
 

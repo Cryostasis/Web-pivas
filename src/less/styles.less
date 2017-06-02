@@ -238,13 +238,23 @@ body {
 			z-index: -1;
 		}
 
-		.slider-description {
-			position: absolute;
+		.slider-description-1 {
+			background-image: url(../images/bg-content-1.png);
+		}
+
+		.slider-description-2 {
+			background-image: url(../images/bg-content-2.jpg);
+		}
+
+		.slider-description-1, .slider-description-2 {
+			width: 100%;
+			height: calc(~"100vw * 686 / 1920");
+			min-height: 400px;
+
 			display: flex;
 			margin: auto;
 			z-index: 1;
 			padding: 0;
-			max-width: 1150px;
 
 			.btn-l {
 				float: right;
@@ -350,7 +360,7 @@ body {
 		height: 100%;
 		background-color: rgba(0, 0, 0, 0.7);
 		z-index: 100;
-		visibility: hidden;
+		display: none;
 
 		.TG-form {
 			background-color: #ffffff;
