@@ -2,6 +2,11 @@
 @import "variables.less";
 
 @font-face {
+	font-family: Lato-t;
+	src: url(../fonts/Lato-Thin.ttf);
+}
+
+@font-face {
 	font-family: Lato-i;
 	src: url(../fonts/Lato-Italic.ttf);
 }
@@ -15,8 +20,42 @@
 body {
 	background-image: url(../images/bg.png);
 
-	.waves {
+	.spacer-40 {
+		padding-top: 40px;
+	}
+	
+	.spacer-25 {
+		padding-top: 25px;
+	}
+
+	.min-1000 {
+		min-width: 1000px;
+	}
+
+	.flex-center {
+		float: none;
+		margin: 0 auto;
+	}
+
+	ul {
+		li {
+			padding: 8px;
+		}
+    	list-style-image: url('../images/1@2x.png');
+	}
+
+	.center-content {
+		flex-direction: column;
+		justify-content: center;
+		top: 0;
+		left:0;
+		bottom: 0;
+		right: 0;
+	}
+
+	.waves-bot {
 		position: relative;
+		width: 100%;
 
 		&::after {
 			position: absolute;
@@ -30,30 +69,39 @@ body {
 		}
 	}
 
-	.head-row {
+	.waves-top {
+		position: relative;
+		width: 100%;
+
+		&::before {
+			position: absolute;
+			display: block;
+			content: "";
+			background: url(../images/wave-bot.png);
+			height: 18px;
+			width: 100%;
+			top: -18px;
+			z-index: 1;
+		}
+	}
+
+	.no-margin {
 		margin: 0;
 	}
 
-	.p1 {
-		margin: 0 0;
-		font-family: Lato;
-		font-size: 50px;
-		letter-spacing: 2.6px;
-		text-align: center;
-		color: #ffffff;
-		text-shadow: 0px 0.5px 0.5px rgba(0, 0, 0, 0.15);
-	}
-	.p3	{
-		font-family: Lato;
-		font-size: 30px;
-		font-weight: 300;
-		letter-spacing: 1.6px;
-		text-align: center;
-		color: #ffffff;
-		text-shadow: 0px 0.5px 0.5px rgba(0, 0, 0, 0.15);
+	.no-padding {
+		padding: 0;
 	}
 
-	header {
+	.line {
+		width: 248px;
+		height: 8px;
+		margin-top: 5px;
+		margin-bottom: 10px;
+		background-image: url(../images/линия@2x.png);
+	}
+
+	header, footer {
 		background-color: #ffffff;
 		max-width: 1920px;
 
@@ -73,8 +121,6 @@ body {
 			padding: 0;
 			max-width: 1000px;
 			height: 90px;
-		    float: none;
-		    margin: 0 auto;
 		}
 	}
 
@@ -105,63 +151,141 @@ body {
 		.slider-description {
 			position: absolute;
 			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			top: 0;
-			left:0;
-			bottom: 0;
-			right: 0;
 			margin: auto;
 			z-index: 1;
 			padding: 0;
 			max-width: 1150px;
 
-			.line {
-				width: 248px;
-				float: none;
-				padding: 7px;
-		    	margin: 0 auto;
+			.btn-l {
+				float: right;
 			}
-		}
 
-		.center-text {
-			padding-top: 5px;
-			max-width: 1145px;
-		    float: none;
-		    margin: 0 auto;
-
-		    .row-btn {
-				min-width: 1000px;
+			.btn-r {
+				float: left;
 			}
-		}
 
-		.btn-circle {
-			width: 37px;
-			height: 37px;
-			text-align: center;
-			padding: 6px 0;
-			font-size: 12px;
-			line-height: 1.428571429;
-			border-radius: 20px;
-			border: 0px;
-			background-color: rgba(255, 255, 255, 0.25);
-			color: #efc22d
-		}
+			.center-text {
+				padding-top: 5px;
+				max-width: 1145px;
 
-		.btn-l {
-			float: right;
-		}
+				.row-btn {
+					min-width: 1000px;
+				}
+			}
 
-		.btn-r {
-			float: left;
+			.btn-circle {
+				width: 37px;
+				height: 37px;
+				text-align: center;
+				padding: 6px 0;
+				font-size: 12px;
+				line-height: 1.428571429;
+				border-radius: 20px;
+				border: 0px;
+				background-color: rgba(255, 255, 255, 0.25);
+				color: #efc22d
+			}
+			.btn-beer {
+				width: 322px;
+				height: 43px;
+				text-align: center;
+				font-family: Lato;
+				font-weight: 600;
+				letter-spacing: 1px;
+				padding: 0;
+				font-size: 18px;
+				line-height: 1.428571429;
+				border-radius: 40px;
+				border: 2px;
+				background-color: #efc22d;
+				color: black;
+				box-shadow: 0 2px 5px rgba(0,0,0,0.25); 
+			}
 		}
 	}
 
 	.description {
+		position: relative;
+		width: 100%;
+		background-color: #ffffff;
 		display: flex;
+		padding-top: 20px;
+		padding-bottom: 50px;
+
+		.descr-row {
+			width: 1024px;
+		}
+
+		.img-beers {
+			padding: 0;
+			width: 335px;
+			min-height: 245px;
+			border: 1px solid #efc22d;
+			background-image: url(../images/beers.jpg);
+			background-size: cover;
+		}
 	}
 
-	ul {
-    	list-style-image: url('../images/1@2x.png');
+	.about {
+		position: relative;
+		width: 100%;
+
+		height: 650px;
+
+		display: flex;
+		background-image: url(../images/bg-about.png);
+		background-size: cover;
+
+		.map {
+			width: 1000px;
+		}
+	}
+
+
+
+	/* -----ШРИФТЫ----- */
+
+	.p1, .p2, .p3, .p4, .p5 {
+		margin: 0 0;
+		font-family: Lato;
+		text-align: center;
+	}
+
+	.p1, p2 {
+		font-size: 50px;
+		letter-spacing: 2.6px;
+	}
+
+	.p1 {
+		color: #ffffff;
+		text-shadow: 0px 0.5px 0.5px rgba(0, 0, 0, 0.15);
+	}
+
+	.p2 {
+		color: #212121;
+	}
+
+	.p3	{
+		font-family: Lato-t;
+		font-size: 30px;
+		font-weight: 900;
+		letter-spacing: 1.6px;
+		color: #ffffff;
+		text-shadow: 0px 0.5px 0.5px rgba(0, 0, 0, 0.15);
+	}
+
+	.p4, .p5 {
+		font-size: 18px;
+		font-weight: 300;
+		letter-spacing: 0.4px;
+		text-align: left;
+	}
+
+	.p4 {
+		color: #212121;
+	}
+
+	.p5 {
+		color: #ffffff;
 	}
 }
