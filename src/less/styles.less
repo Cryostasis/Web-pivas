@@ -1,6 +1,31 @@
 @import "bootstrap.less";
 @import "variables.less";
 
+@media only screen and (max-width: 1200px) {
+	.box-1000 {
+		width: 500px;
+	}
+
+	p {
+		color: red;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.box-1000 {
+		width: 500px;
+	}
+
+	p {
+		color: blue;
+	}
+}
+
+@font-face {
+	font-family: Lato-b;
+	src: url(../fonts/Lato-Black.ttf);
+}
+
 @font-face {
 	font-family: Lato-t;
 	src: url(../fonts/Lato-Thin.ttf);
@@ -16,25 +41,35 @@
 	src: url(../fonts/Lato-Regular.ttf);
 }
 
-
 body {
 	background-image: url(../images/bg.png);
 
 	.spacer-40 {
-		padding-top: 40px;
+		margin-top: 40px;
 	}
 	
 	.spacer-25 {
-		padding-top: 25px;
+		margin-top: 25px;
+	}
+
+	.spacer-40-p {
+		padding-top: 40px;
+	}
+	
+	.spacer-15-p {
+		padding-top: 15px;
+	}
+
+	.spacer-l-25-p {
+		padding-left: 25px;
 	}
 
 	.min-1000 {
 		min-width: 1000px;
 	}
 
-	.flex-center {
-		float: none;
-		margin: 0 auto;
+	.img-fix {
+		align-self: center;
 	}
 
 	ul {
@@ -53,35 +88,66 @@ body {
 		right: 0;
 	}
 
-	.waves-bot {
+	.centered {
+		float: none;
+		margin: 0 auto;
+	}
+
+	.flex-center, .flex-right, .flex-left  {
+		display: flex;
+		align-items: center;
+	}
+
+	.flex-center  {
+		justify-content: center;
+	}
+
+	.flex-right {
+		justify-content: flex-end;
+	}
+
+	.flex-left {
+		justify-content: flex-start;
+	}
+
+	.flex-column {
+		flex-direction: column;
+	}
+
+	.flex-row {
+		flex-direction: row;
+	}
+
+	.flex-stretch {
+		align-items: stretch;
+	}
+
+	.waves-top, .waves-bot {
 		position: relative;
 		width: 100%;
 
-		&::after {
+		&::after, &::before {
 			position: absolute;
 			display: block;
 			content: "";
-			background: url(../images/wave-top.png);
-			height: 18px;
 			width: 100%;
-			top: 100%;
 			z-index: 1;
 		}
 	}
 
-	.waves-top {
-		position: relative;
-		width: 100%;
-
-		&::before {
-			position: absolute;
-			display: block;
-			content: "";
-			background: url(../images/wave-bot.png);
+	.waves-bot {	
+		&::after {
+			background: url(../images/wave-top.png);
+			top: 100%;
 			height: 18px;
-			width: 100%;
+		}
+	}
+
+	.waves-top {
+		&::before {
+			background: url(../images/wave-bot.png);
 			top: -18px;
-			z-index: 1;
+			height: 18px;
 		}
 	}
 
@@ -99,6 +165,30 @@ body {
 		margin-top: 5px;
 		margin-bottom: 10px;
 		background-image: url(../images/линия@2x.png);
+	}
+
+	.btn-beer {
+		outline: none !important;
+		padding-right: 54px;
+		padding-left: 54px;
+		padding-bottom: 3px;
+		height: 43px;
+		text-align: center;
+		font-family: Lato;
+		font-weight: 600;
+		letter-spacing: 1px;
+		font-size: 18px;
+		line-height: 1.428571429;
+		border-radius: 40px;
+		border: 2px;
+		background-color: #efc22d;
+		color: black;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25); 
+
+		&:hover, &:focus {
+			color: black;
+			background-color: #dfb21d;
+		}
 	}
 
 	header, footer {
@@ -174,6 +264,7 @@ body {
 			}
 
 			.btn-circle {
+				outline: none !important;
 				width: 37px;
 				height: 37px;
 				text-align: center;
@@ -185,32 +276,15 @@ body {
 				background-color: rgba(255, 255, 255, 0.25);
 				color: #efc22d
 			}
-			.btn-beer {
-				width: 322px;
-				height: 43px;
-				text-align: center;
-				font-family: Lato;
-				font-weight: 600;
-				letter-spacing: 1px;
-				padding: 0;
-				font-size: 18px;
-				line-height: 1.428571429;
-				border-radius: 40px;
-				border: 2px;
-				background-color: #efc22d;
-				color: black;
-				box-shadow: 0 2px 5px rgba(0,0,0,0.25); 
-			}
 		}
 	}
 
 	.description {
-		position: relative;
 		width: 100%;
 		background-color: #ffffff;
-		display: flex;
-		padding-top: 20px;
-		padding-bottom: 50px;
+
+		padding-top: 50px;
+		padding-bottom: 80px;
 
 		.descr-row {
 			width: 1024px;
@@ -227,31 +301,86 @@ body {
 	}
 
 	.about {
-		position: relative;
 		width: 100%;
-
-		height: 650px;
-
-		display: flex;
 		background-image: url(../images/bg-about.png);
 		background-size: cover;
 
-		.map {
+		padding-top: 80px;
+		padding-bottom: 80px;
+
+		.map-box {
 			width: 1000px;
+
+			#map {
+				margin-top: 30px;
+				width: 1000px;
+				height: 350px;
+				border: 3px solid #efc22d;
+				border-radius: 4px;
+			}
 		}
 	}
 
+	.another {
+		width: 100%;
+		background-color: #ffffff;
 
+		padding-top: 50px;
+		padding-bottom: 80px;
+	}
+
+	.rest {
+		width: 100%;
+		background-image: url(../images/патерн@2x.png);
+		background-size: cover;
+
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
+
+	.box-1000 {
+		width: 1000px;
+	}
+
+	.shadow {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.7);
+		z-index: 100;
+		visibility: hidden;
+
+		.TG-form {
+			background-color: #ffffff;
+			border-radius: 35px;
+			padding: 20px;
+			width: 800px;
+			height: 75px;
+			font-family: Lato;
+			font-size: 25px;
+			font-weight: 300;
+			letter-spacing: 1.2px;
+			text-align: center;
+			color: #1d1d1d;
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+
+			a {
+				color: #ffc300;
+			}
+		}
+	}
 
 	/* -----ШРИФТЫ----- */
 
-	.p1, .p2, .p3, .p4, .p5 {
+	.p1, .p2, .p3, .p4, .p5, .p6 {
 		margin: 0 0;
 		font-family: Lato;
 		text-align: center;
 	}
 
-	.p1, p2 {
+	.p1, .p2 {
 		font-size: 50px;
 		letter-spacing: 2.6px;
 	}
@@ -274,11 +403,12 @@ body {
 		text-shadow: 0px 0.5px 0.5px rgba(0, 0, 0, 0.15);
 	}
 
-	.p4, .p5 {
+	.p4, .p5, .p6 {
 		font-size: 18px;
 		font-weight: 300;
 		letter-spacing: 0.4px;
 		text-align: left;
+		line-height: 1.2;
 	}
 
 	.p4 {
@@ -287,5 +417,11 @@ body {
 
 	.p5 {
 		color: #ffffff;
+	}
+
+	.p6 {
+		color: #000;
+		font-family: Lato-b;
+		font-weight: 600;
 	}
 }
