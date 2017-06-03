@@ -1,25 +1,5 @@
-@import "bootstrap.less";
-@import "variables.less";
-
-@media only screen and (max-width: 1200px) {
-	.box-1000 {
-		width: 500px;
-	}
-
-	p {
-		color: red;
-	}
-}
-
-@media only screen and (max-width: 768px) {
-	.box-1000 {
-		width: 500px;
-	}
-
-	p {
-		color: blue;
-	}
-}
+@import "../vendors/bootstrap/less/bootstrap.less";
+@import "../vendors/bootstrap/less/variables.less";
 
 @font-face {
 	font-family: Lato-b;
@@ -68,13 +48,15 @@ body {
 		min-width: 1000px;
 	}
 
-	.img-fix {
+	.align-fix {
 		align-self: center;
 	}
 
 	ul {
 		li {
-			padding: 8px;
+			padding-left: 15px;
+			padding-top: 20px;
+			padding-right: 25px;
 		}
     	list-style-image: url('../images/1@2x.png');
 	}
@@ -98,8 +80,16 @@ body {
 		align-items: center;
 	}
 
+	.flex-top {
+		align-items: flex-start;
+	}
+
 	.flex-center  {
 		justify-content: center;
+	}
+
+	.flex-space {
+		justify-content: space-between;
 	}
 
 	.flex-right {
@@ -112,6 +102,10 @@ body {
 
 	.flex-column {
 		flex-direction: column;
+	}
+
+	.flex-column-r {
+		flex-direction: column-reverse;
 	}
 
 	.flex-row {
@@ -173,7 +167,7 @@ body {
 		padding-right: 54px;
 		padding-left: 54px;
 		padding-bottom: 3px;
-		height: 43px;
+		min-height: 43px;
 		text-align: center;
 		font-family: Lato;
 		font-weight: 600;
@@ -185,6 +179,8 @@ body {
 		background-color: #efc22d;
 		color: black;
 		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25); 
+		white-space: normal;
+		max-width: calc(~"100% - 40px");
 
 		&:hover, &:focus {
 			color: black;
@@ -196,11 +192,15 @@ body {
 		background-color: #ffffff;
 		max-width: 1920px;
 
+		.header-box {
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+
 		.header-text {
-			margin-top: 35px;
-			float: right;
+			margin-top: 15px;
+			
 			padding: 0;
-			height: 22px;
 			font-family: Lato-i;
 			font-size: 22px;
 			font-weight: 300;
@@ -233,6 +233,18 @@ body {
 			top: 0;
 		}
 
+		.carousel-indicators {
+			visibility: hidden;
+
+			li {
+				border: 1px solid #efc22d;
+			}
+
+			.active {
+				background-color: #efc22d;
+			}
+		}
+
 		.carousel-bg {
 			position: relative;
 			width: 100%;
@@ -251,19 +263,12 @@ body {
 			width: 100%;
 			height: calc(~"100vw * 686 / 1920");
 			min-height: 400px;
+			background-size: cover;
 
 			display: flex;
 			margin: auto;
 			z-index: 1;
 			padding: 0;
-
-			.btn-l {
-				float: right;
-			}
-
-			.btn-r {
-				float: left;
-			}
 
 			.center-text {
 				padding-top: 5px;
@@ -297,17 +302,11 @@ body {
 		padding-top: 50px;
 		padding-bottom: 80px;
 
-		.descr-row {
-			width: 1024px;
-		}
-
 		.img-beers {
 			padding: 0;
 			width: 335px;
 			min-height: 245px;
 			border: 1px solid #efc22d;
-			background-image: url(../images/beers.jpg);
-			background-size: cover;
 		}
 	}
 
@@ -338,6 +337,11 @@ body {
 
 		padding-top: 50px;
 		padding-bottom: 80px;
+
+		.img-arrow {
+			margin-right: 50px;
+			margin-left: 50px;
+		}
 	}
 
 	.rest {
@@ -368,7 +372,7 @@ body {
 			border-radius: 35px;
 			padding: 20px;
 			width: 800px;
-			height: 75px;
+			
 			font-family: Lato;
 			font-size: 25px;
 			font-weight: 300;
@@ -406,12 +410,15 @@ body {
 	}
 
 	.p3	{
+		padding-left: 20px;
+		padding-right: 20px;
 		font-family: Lato-t;
 		font-size: 30px;
 		font-weight: 900;
 		letter-spacing: 1.6px;
 		color: #ffffff;
 		text-shadow: 0px 0.5px 0.5px rgba(0, 0, 0, 0.15);
+		min-width: 800px;
 	}
 
 	.p4, .p5, .p6 {
@@ -434,5 +441,56 @@ body {
 		color: #000;
 		font-family: Lato-b;
 		font-weight: 600;
+	}
+}
+
+@media only screen and (max-width: 1040px) {
+	body .box-1000, body .about .map-box #map, body .about .map-box {
+		width: calc(~"100% - 40px");
+	}
+
+	.btn-left, .btn-right {
+		display: none;
+	}
+
+	body .slider .carousel-indicators {
+		visibility: visible;
+	}
+
+	body .shadow .TG-form {
+		width: calc(~"100% - 40px");
+	}
+
+	body .p3 {
+		min-width: 0;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	body .slider .slider-description-1, body .slider .slider-description-2 {
+		min-height: 600px;
+	}
+
+	#descr-box {
+		flex-direction: column-reverse;
+		align-items: center;
+	}
+
+	.img-arrow {
+		display: none;
+	}
+
+	body .btn-beer {
+		padding-right: 30px;
+		padding-left: 30px;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	body header .header-box {
+		flex-direction: column;
+	}
+	body header .header-text {
+		text-align: center;
 	}
 }

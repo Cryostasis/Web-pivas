@@ -14,13 +14,11 @@
 	</head>
 	<body>
 	    <div class="wrapper">
-	    	<header>
-	    		<div class="row no-margin waves-bot">
-	    			<div class="col-md-14 col-centered centered">
-			    		<div class="col-md-8 col-logo">
+	    	<header class="waves-bot">
+	    		<div class="flex-center flex-row">
+	    			<div class="header-box box-1000 flex-center flex-row flex-space">
 			    			<a href=""><img src="images/Лого@2x.png" alt="logo"></a>
-			    		</div>
-			    		<div class="col-md-16 header-text">
+			    		<div class="header-text">
 			    			Получай <b>бонусы</b>, <b>отправляй</b> их друзьям и <b>снова получай</b>
 			    		</div>
 			    	</div>
@@ -29,6 +27,10 @@
 
 	    	<div class="slider">
 	    		<div id="MyCarousel" class="carousel slide" data-interval="0" data-ride="carousel">
+					<ol class="carousel-indicators">
+						<li data-target="#MyCarousel" data-slide-to="0" class="active"></li>
+						<li data-target="#MyCarousel" data-slide-to="1"></li>
+					</ol>
 					<div class="carousel-inner">
 					  	<div class="active item flex-center flex-column">
 				    		<div class="slider-description-1 flex-center flex-column">
@@ -36,16 +38,10 @@
 				    			<div class="clearfix"></div>
 				    			<div class="line"></div>
 				    			<div class="center-text">
-					    			<div class="row row-btn">
-						    			<div class="col-md-1">
-						    				<button type="button" class="btn btn-default btn-circle btn-left"><i class="glyphicon glyphicon-chevron-left"></i></button>
-						    			</div>
-						    			<div class="col-md-22">
-						    				<p class="p3">Кружка пива 0.5 литра каждому посетителю <b>БЕСПЛАТНО</b></p>
-						    			</div>
-						    			<div class="col-md-1">
-						    				<button type="button" class="btn btn-default btn-circle btn-right"><i class="glyphicon glyphicon-chevron-right"></i></button>
-						    			</div>
+					    			<div class="flex-center flex-row box-1000">
+						    			<button type="button" class="btn btn-default btn-circle btn-left align-fix"><i class="glyphicon glyphicon-chevron-left"></i></button>
+						    			<p class="p3">Кружка пива 0.5 литра каждому посетителю <b>БЕСПЛАТНО</b></p>
+						    			<button type="button" class="btn btn-default btn-circle btn-right align-fix"><i class="glyphicon glyphicon-chevron-right"></i></button>
 					    			</div>
 					    		</div>	
 								<div class="spacer-40-p"><button type="button" class="btn btn-beer">Получить Кружку пива!</button></div>
@@ -57,19 +53,13 @@
 				    			<div class="clearfix"></div>
 				    			<div class="line"></div>
 				    			<div class="center-text">
-					    			<div class="row row-btn">
-						    			<div class="col-md-1">
-						    				<button type="button" class="btn btn-default btn-circle btn-left"><i class="glyphicon glyphicon-chevron-left"></i></button>
-						    			</div>
-						    			<div class="col-md-22">
-						    				<p class="p3">Описание слайда 2</p>
-						    			</div>
-						    			<div class="col-md-1">
-						    				<button type="button" class="btn btn-default btn-circle btn-right"><i class="glyphicon glyphicon-chevron-right"></i></button>
-						    			</div>
+					    			<div class="flex-center flex-row box-1000">
+						    			<button type="button" class="btn btn-default btn-circle btn-left align-fix"><i class="glyphicon glyphicon-chevron-left"></i></button>
+						    			<p class="p3">Описание слайда 2</p>
+						    			<button type="button" class="btn btn-default btn-circle btn-right align-fix"><i class="glyphicon glyphicon-chevron-right"></i></button>
 					    			</div>
 					    		</div>	
-								<div class="spacer-40-p"><button type="button" class="btn btn-beer">Текст кнопки 2</button></div>
+								<div class="spacer-40-p"><button type="button" class="btn btn-beer">Получить Кружку пива!</button></div>
 				    		</div>
 					  	</div>
 					</div>
@@ -79,22 +69,22 @@
 	    	<div class="description flex-center flex-column waves-top waves-bot">
 	    		<p class="p2">Описание Акции</p>
 				<div class="line"></div>
-				<div class="row descr-row spacer-25">
-					<div class="col-md-16 p4">
+				<div id="descr-box" class="flex-center flex-row flex-top box-1000 spacer-25">
+					<div class="p4">
 						<ul>
 							<li>Каждому посетителю <b>"Паб Пивас"</b> при предъявлении купона кружка 0.5 литра любого пива на выбор в подарок. </li>
 							<li>За одно посещение каждый посетитель может использовать <b>всего 1 купон.</b> </li>
 							<li>Если вы пришли компанией, то каждый из вас, кто предъявит купон получит кружку 0.5 литра любого пива на выбор <b>бесплатно</b>. </li>
 						</ul>
 					</div>
-					<div class="col-md-7 img-beers"></div>
+					<img class="img-beers" src="images/beers.jpg">
 				</div>
 	    	</div>
 
 			<div class="about flex-center flex-column ">
 				<p class="p1">О компании “Паб Пивас”</p>
 				<div class="line"></div>
-				<div class="map-box">	
+				<div class="map-box flex-center flex-column">	
 					<p class="p5 spacer-15-p">Клёвый паб, в котором можно попробовать крафтового пива, отдохнуть после работы и отлично провести время в компании друзей.</p>
 					<div id="map"></div>
 				</div>
@@ -105,16 +95,10 @@
 					<p class="p2">Хотите получить ещё такой же бонус?</p>
 					<div class="line centered"></div>
 					<p class="p4 spacer-15-p">Отправьте бонус друзьям со странице акции в <b>Telegram</b>. Как только друг предъявит присланный вами купон, вам будет зачислен <b>ещё один бонус</b>.</p>
-					<div class="row flex-center">
-						<div class="col-md-4 flex-right">
-							<img class="img-fix spacer-25" src="images/share-1@2x.png">
-						</div>
-						<div class="col-md-16 flex-center">
+					<div class="flex-center flex-row">
+							<img class="align-fix spacer-25 img-arrow" src="images/share-1@2x.png">
 							<button type="button" class="btn btn-beer spacer-40">Получить Кружку пива! и поделиться с друзьями</button>
-						</div>
-						<div class="col-md-4">
-							<img class="spacer-25" src="images/share-1-copy@2x.png">
-						</div>
+							<img class="spacer-25 img-arrow" src="images/share-1-copy@2x.png">
 					</div>
 				</div>
 			</div>
@@ -124,21 +108,21 @@
 				<div class="line"></div>
 				<div class="box-1000">
 					<div class="flex-left flex-row spacer-25">
-						<img class="img-fix" src="images/rest1.png">
+						<img class="align-fix" src="images/rest1.png">
 						<div class="flex-left flex-column flex-stretch spacer-l-25-p">
 							<p class="p4"><b>Пригласи 10 друзей</b> и <br/> получи мясной сет</p>
 							<p class="p6">БЕСПЛАТНО</p>
 						</div>
 					</div>
 					<div class="flex-left flex-row spacer-25">
-						<img class="img-fix" src="images/rest2.png">
+						<img class="align-fix" src="images/rest2.png">
 						<div class="flex-left flex-column flex-stretch spacer-l-25-p">
 							<p class="p4"><b>Пригласи 10 друзей</b> и <br/> получи чашку чая</p>
 							<p class="p6">БЕСПЛАТНО</p>
 						</div>
 					</div>
 					<div class="flex-left flex-row spacer-25">
-						<img class="img-fix" src="images/rest3.png">
+						<img class="align-fix" src="images/rest3.png">
 						<div class="flex-left flex-column flex-stretch spacer-l-25-p">
 							<p class="p4"><b>Пригласи 10 друзей</b> и <br/> получи шашлык</p>
 							<p class="p6">БЕСПЛАТНО</p>
@@ -148,13 +132,11 @@
 				<button type="button" class="btn btn-beer spacer-40">Получить Кружку пива!</button>
 			</div>
 
-	    	<footer>
-				<div class="row no-margin waves-top">
-	    			<div class="col-md-14 col-centered centered">
-			    		<div class="col-md-8 col-logo">
+	    	<footer class="waves-top">
+				<div class="flex-center flex-row">
+	    			<div class="header-box box-1000 flex-center flex-row flex-space">
 			    			<a href=""><img src="images/Лого@2x.png" alt="logo"></a>
-			    		</div>
-			    		<div class="col-md-16 header-text">
+			    		<div class="header-text">
 			    			Получай <b>бонусы</b>, <b>отправляй</b> их друзьям и <b>снова получай</b>
 			    		</div>
 			    	</div>
@@ -169,7 +151,7 @@
 		</div>
 
 	    <script src="http://code.jquery.com/jquery-latest.js"></script>
-	    <script src="js/bootstrap.min.js"></script>
+	    <script src="js/vendors/bootstrap.min.js"></script>
 		<script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
 
 	    <script src="js/app.js"></script>
